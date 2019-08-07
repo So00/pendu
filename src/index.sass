@@ -1,0 +1,99 @@
+$color: #EEEEEE
+
+@import 'mixin.sass'
+
+body
+  height: 100vh
+  background: $color
+  .App
+    display: flex
+    flex-flow: column nowrap
+    height: 100vh
+    justify-content: space-around
+    align-content: center
+    text-align: center
+
+    .top
+      display: flex
+      flex-flow: row wrap
+      justify-content: space-around
+      max-height: 30vh
+      +breakpoint(tablet)
+        max-height: unset
+      .items
+        button
+          width: 3vw
+          margin-right: 5px
+          padding: 6px 0
+        h2
+          margin: 2px
+      h1
+        font-size: 8vh
+        font-weight: 600
+        width: 100%
+
+    .info
+      &.primary
+        font-size: 30px
+      &.secondary
+        font-size: 20px
+        font-style: italic
+
+    .word
+      font-size: 50px
+      max-height: 30vh
+      +breakpoint(tablet)
+        min-height: 30vh
+      display: flex
+      flex-flow: row nowrap
+      justify-content: center
+      align-items: center
+      svg
+        margin: 0 0 0 15vw
+        border: 1px solid black
+      line
+        stroke: black
+        stroke-width: 1
+      #door1
+        transform-origin: 0% 100%
+      #door2
+        transform-origin: 100% 100%
+      .hide
+        visibility: hidden
+
+    .info
+      display: flex
+      flex-direction: row
+      justify-content: space-around
+
+    .win, .loose
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-content: center
+        position: absolute
+        top: 0
+        left: 0
+        height: 100vh
+        width: 100vw
+        font-size: 40px
+        background: rgba(adjust-hue($color,45), 0.9)
+        .message
+          margin-bottom: 6vh
+        .secondary
+          font-size: 25px
+          font-style: italic
+        button
+          width: 40%
+          align-self: center
+          font-size: 30px
+
+    input
+      position: absolute
+      opacity: 0
+
+    .hg-button
+      height: 9vh
+      &.played
+          background: rgba(#666666, 0.8)
+          color: white
